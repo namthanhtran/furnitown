@@ -1,0 +1,20 @@
+// css components
+.global-text {
+    letter-spacing: 0.5px;
+    @include text(12px, 'e', 30px, $bg-black, null);
+}
+
+.local-text .title-global {
+    letter-spacing: 0.5px;
+    @include text(12px, 'e', 30px, $bg-black, null);
+}
+
+.title-local {
+    @include text(12px, 'eb', null, $bg-black, uppercase);
+}
+
+.product {
+    h3 {
+        padding-bottom: 30px;
+    }
+}

@@ -1,0 +1,530 @@
+// css header
+body {
+    &.clicked {
+        .header .mobile .grToggle .toggle {
+            &::before {
+                @include transform(rotate(45deg) translate(6px, 8px) !important);
+                @include transition(transform 0.3s);
+            }
+            span {
+                opacity: 0;
+                @include transition(0.3s);
+            }
+            &:after {
+                @include transform(rotate(-45deg) translate(4px, -8px) !important);
+                @include transition(transform 0.3s);
+            }
+        }
+        .header .mobile .nav {
+            display: block;
+            @include transition($t);
+        }
+    }
+}
+
+.header {
+    position: fixed;
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    transition: 0.5s;
+    a:hover {
+        color: $hover-yellow;
+    }
+    .container-fluid {
+        position: relative;
+        width: 100%;
+        .header__links {
+            width: 100%;
+            display: flex;
+            li {
+                padding-right: 40px;
+                padding-top: 53px;
+                a {
+                    @include text(11px, 'evh', null, $text-color-black, uppercase);
+                    &:hover {
+                        color: $hover-yellow;
+                    }
+                }
+                &:last-child {
+                    img {
+                        transform: translateX(0);
+                        @include transition($t);
+                    }
+                    &:hover {
+                        img {
+                            transform: translateX(20px);
+                            @include transition($t);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .scroll {
+        margin-top: -70px;
+        background-color: $bg-menu;
+        width: 100%;
+        height: 70px;
+        @include flex(none, center, center);
+        li {
+            padding: 0 18px;
+            a {
+                @include text(11px, 'e', null, $text-color-white, uppercase);
+                &:hover {
+                    color: $hover-yellow;
+                }
+            }
+        }
+    }
+    &__menu {
+        margin-top: -70px;
+        position: relative;
+        &-block {
+            width: inherit;
+            height: inherit;
+            margin: 0 auto;
+            position: relative;
+            .cover {
+                position: absolute;
+                margin-top: 270px;
+                background-color: $bg-menu;
+                width: 180px;
+                height: 180px;
+                @include transition($t);
+                .hidden-menu {
+                    display: none;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                .block-logo {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    .logo {
+                        width: 100%;
+                        height: 100%;
+                        padding: 0 70px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        img {
+                            width: 40px;
+                            height: 40px;
+                            &:last-child {
+                                padding-top: 20px;
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                    .logo-hidden {
+                        display: none;
+                    }
+                }
+                &:hover {
+                    background-color: $bg-white;
+                    display: flex;
+                    width: 230px;
+                    @include transition($t);
+                    .hidden-menu {
+                        width: 180px;
+                        @include flex(flex, center, center);
+                        @include text(16px, 'ab', null, $text-color-black, uppercase);
+                    }
+                    .logo {
+                        display: none;
+                    }
+                    .logo-hidden {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        padding-top: 20px;
+                        position: relative;
+                        &::after {
+                            content: "";
+                            top: 100px;
+                            left: 0;
+                            width: 88px;
+                            height: 2px;
+                            background-color: $bg-black;
+                            position: absolute;
+                        }
+                    }
+                    .toggle {
+                        display: none;
+                    }
+                    .block-menu {
+                        display: block;
+                        padding-right: 45px;
+                        p {
+                            @include text(1rem, 'ab', null, $text-color-black, uppercase);
+                        }
+                        &:hover {
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+        &-hidden {
+            display: none;
+            &.isPopup {
+                @keyframes blockMenu {
+                    0% {
+                        @include transition($t);
+                        transform: translateX(-485px);
+                        opacity: 0;
+                    }
+                    100% {
+                        @include transition($t);
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+                animation: blockMenu 1s;
+                .main {
+                    background-color: $bg-hidden-menu;
+                    width: 485px;
+                    height: 100vh;
+                    padding: 55px 35px 55px 45px;
+                    .hidden-top {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        a {
+                            @include text(11px, 'eb', null, $text-color-white, uppercase);
+                            &:hover {
+                                color: $hover-yellow;
+                            }
+                        }
+                        .hidden-social {
+                            display: flex;
+                            p {
+                                display: flex;
+                                align-items: center;
+                                margin-right: 20px;
+                                @include text(11px, 'eb', null, $text-color-white, uppercase);
+                            }
+                            .icon {
+                                height: 100%;
+                                display: flex;
+                                i {
+                                    &:first-child {
+                                        margin-right: 20px;
+                                    }
+                                    width: 20px;
+                                    img {
+                                        max-width: 20px !important;
+                                    }
+                                }
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                    .hidden-main {
+                        padding-top: 130px;
+                        display: flex;
+                        .close-menu {
+                            padding-right: 100px;
+                            display: flex;
+                            flex-direction: column;
+                            position: relative;
+                            img {
+                                width: 40px;
+                            }
+                            &::after {
+                                position: absolute;
+                                top: 50px;
+                                left: -10px;
+                                content: "";
+                                width: 60px;
+                                height: 1px;
+                                background-color: $bg-white;
+                            }
+                            .toggle {
+                                margin-top: 30px;
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                        .menu-column {
+                            .title {
+                                position: relative;
+                                top: 25px;
+                                @include text(18px, 'eb', null, $text-color-white, uppercase);
+                                 ::after {
+                                    top: 25px;
+                                    left: -50px;
+                                    position: absolute;
+                                    content: "";
+                                    width: 310px;
+                                    height: 1px;
+                                    background-color: $bg-white;
+                                }
+                            }
+                            .list-item {
+                                padding-top: 50px;
+                                display: flex;
+                                flex-direction: column;
+                                li {
+                                    padding: 20px 0;
+                                    a {
+                                        @include text(16px, 'eb', null, $text-color-white, uppercase);
+                                        &:hover {
+                                            color: $hover-yellow;
+                                        }
+                                    }
+                                }
+                            }
+                            .more {
+                                position: relative;
+                                padding: 50px 0;
+                                ul {
+                                    display: flex;
+                                    li {
+                                        &:first-child {
+                                            padding-right: 40px;
+                                             ::after {
+                                                position: absolute;
+                                                left: 50px;
+                                                content: "";
+                                                width: 1px;
+                                                height: 20px;
+                                                background-color: $bg-white;
+                                            }
+                                        }
+                                        a {
+                                            padding: 0 -5px;
+                                            @include text(11px, 'eb', null, $text-color-white, uppercase);
+                                            &:hover {
+                                                color: $hover-yellow;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .mobile {
+        width: 100%;
+        height: 100%;
+        display: none;
+        .grToggle {
+            padding: 15px 40px;
+            background-color: $bg-menu;
+            @include flex(flex, center, space-between);
+            li {
+                &:first-child {
+                    display: flex;
+                    .toggle {
+                        cursor: pointer;
+                        width: 40px;
+                        height: 20px;
+                        position: relative;
+                        span {
+                            @include transform(translateY(-50%));
+                            @include transition(0.3s);
+                            position: absolute;
+                            width: 100%;
+                            height: 2px;
+                            display: block;
+                            background-color: $bg-white;
+                            top: 50%;
+                        }
+                        &:before,
+                        &:after {
+                            content: '';
+                            width: 100%;
+                            height: 2px;
+                            display: block;
+                            background-color: $bg-white;
+                            @include transform(rotate(0deg) translateY(0px));
+                            @include transition(transform 0.3s);
+                        }
+                        &:after {
+                            position: absolute;
+                            bottom: 0;
+                        }
+                        &.clicked {
+                            &::before {
+                                @include transform(rotate(45deg) translate(6px, 8px));
+                                @include transition(transform 0.3s);
+                            }
+                            span {
+                                opacity: 0;
+                                @include transition(0.3s);
+                            }
+                            &:after {
+                                @include transform(rotate(-45deg) translate(4px, -8px));
+                                @include transition(transform 0.3s);
+                            }
+                        }
+                    }
+                    p {
+                        padding-left: 20px;
+                        @include text(18px, "eb", null, $text-color-white, uppercase);
+                    }
+                }
+            }
+        }
+    }
+    @include lg {
+        .mobile {
+            display: none;
+        }
+    }
+    @include md {
+        .mobile {
+            display: none;
+        }
+    }
+    @include sm {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        .container-fluid,
+        .scroll,
+        .header__menu {
+            display: none;
+        }
+        .mobile {
+            display: block;
+            .nav {
+                display: none;
+                background-color: $bg-menu;
+                width: 100vw;
+                height: 100vh;
+                @include transition($t);
+                ul {
+                    padding-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        @include transition($t);
+                        margin: 0 auto;
+                        padding: 20px;
+                        width: 100vw;
+                        text-align: center;
+                        a {
+                            @include text(11px, 'eb', null, $text-color-white, uppercase);
+                        }
+                        &:hover {
+                            @include transition($t);
+                            width: 100vw;
+                            background-color: $hover-yellow;
+                            text-align: center;
+                        }
+                    }
+                    &:nth-child(5) {
+                        li {
+                            &:first-child {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include xs {
+        position: relative;
+        .container-fluid,
+        .scroll,
+        .header__menu {
+            display: none;
+        }
+        .mobile {
+            display: block;
+            .grToggle {
+                align-items: center;
+                .logo {
+                    width: 50px;
+                    height: 40px;
+                }
+            }
+            .nav {
+                display: none;
+                background-color: $bg-menu;
+                width: 100vw;
+                height: 100vh;
+                @include transition($t);
+                ul {
+                    padding-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        @include transition($t);
+                        margin: 0 auto;
+                        padding: 20px;
+                        width: 100vw;
+                        text-align: center;
+                        a {
+                            @include text(11px, 'eb', null, $text-color-white, uppercase);
+                        }
+                        &:hover {
+                            @include transition($t);
+                            width: 100vw;
+                            background-color: $hover-yellow;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include xxs {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        .container-fluid,
+        .scroll,
+        .header__menu {
+            display: none;
+        }
+        .mobile {
+            display: block;
+            .nav {
+                display: none;
+                background-color: $bg-menu;
+                width: 100vw;
+                height: 100vh;
+                @include transition($t);
+                ul {
+                    padding-top: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    li {
+                        @include transition($t);
+                        margin: 0 auto;
+                        padding: 20px;
+                        width: 100vw;
+                        text-align: center;
+                        a {
+                            @include text(11px, 'eb', null, $text-color-white, uppercase);
+                        }
+                        &:hover {
+                            @include transition($t);
+                            width: 100vw;
+                            background-color: $hover-yellow;
+                            text-align: center;
+                        }
+                    }
+                    &:nth-child(5) {
+                        li {
+                            &:first-child {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

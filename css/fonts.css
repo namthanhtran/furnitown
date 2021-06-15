@@ -1,0 +1,103 @@
+/* FONT FACE - font-display: fallback; */
+
+@font-face {
+    font-family: 'elbi';
+    src: url('../fonts/ElleBaskerville-BoldItalic.woff2') format('woff2'), url('../fonts/ElleBaskerville-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'eli';
+    src: url('../fonts/ElleBaskerville-Italic.woff2') format('woff2'), url('../fonts/ElleBaskerville-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'el';
+    src: url('../fonts/ElleBaskerville.woff2') format('woff2'), url('../fonts/ElleBaskerville.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'elb';
+    src: url('../fonts/ElleBaskerville-Bold.woff2') format('woff2'), url('../fonts/ElleBaskerville-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'elsbi';
+    src: url('../fonts/ElleBaskerville-SemiBoldItalic.woff2') format('woff2'), url('../fonts/ElleBaskerville-SemiBoldItalic.woff') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'elsb';
+    src: url('../fonts/ElleBaskerville-SemiBold.woff2') format('woff2'), url('../fonts/ElleBaskerville-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+}
+
+
+/* Arial */
+
+@font-face {
+    font-family: 'a';
+    src: url('../fonts/arial.ttf') format('woff2'), url('../fonts/arial.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'ab';
+    src: url('../fonts/arialbd.ttf') format('woff2'), url('../fonts/arialbd.ttf') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'abi';
+    src: url('../fonts/arialbi.ttf') format('woff2'), url('../fonts/arialbi.ttf') format('woff');
+    font-weight: 600;
+    font-style: italic;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'ai';
+    src: url('../fonts/ariali.ttf') format('woff2'), url('../fonts/ariali.ttf') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: fallback;
+}
+
+
+/* Avenir */
+
+@font-face {
+    font-family: 'avh';
+    src: url('../fonts/AvenirNextLTPro-Heavy.otf') format('woff2'), url('../fonts/AvenirNextLTPro-Heavy.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
+
+@font-face {
+    font-family: 'avh';
+    src: url('../fonts/AvenirNextLTPro-Heavy.otf') format('woff2'), url('../fonts/AvenirNextLTPro-Heavy.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: fallback;
+}
