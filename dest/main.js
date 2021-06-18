@@ -1,11 +1,10 @@
+// Homepage
 // ---------------Scroll Top--------------------
 let header = document.querySelector('header .container-fluid');
 let hHeader = header.clientHeight;
-let slider = document.querySelector('.slider');
-let hSlider = slider.clientHeight;
 document.addEventListener('scroll', function() {
     let scrollY = window.pageYOffset;
-    if (scrollY > 270) {
+    if (scrollY > 10) {
         $('.header .container-fluid').css("visibility", "hidden");
         $('.header .header__menu').css("visibility", "hidden");
         $('.header .scroll').css("display", "flex");
@@ -77,7 +76,28 @@ $(btnMobile).on('click', function(e) {
 
 $(navMobile).each(function(index, element) {
     $(element).on('click', function(e) {
-        e.preventDefault();
         $('body').removeClass('clicked');
     })
+})
+
+// Product details
+
+let $carousel_prod = $('.watch-prod__slider');
+$carousel_prod.flickity({
+    cellAlign: 'left',
+    contain: true,
+    wrapAround: true,
+    prevNextButtons: false,
+    pageDots: false
+
+})
+
+// button next, prev controls
+$('.btn-sli-prd-prev').on('click', function(e) {
+    e.preventDefault();
+    $carousel_prod.flickity('previous');
+});
+$('.btn-sli-prd-next').on('click', function(e) {
+    e.preventDefault();
+    $carousel_prod.flickity('next');
 })

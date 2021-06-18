@@ -24,6 +24,7 @@ body {
     position: relative;
     @include customscroll();
     .container {
+        max-width: 1060px;
         width: 100%;
         padding-right: 15px;
         padding-left: 15px;
