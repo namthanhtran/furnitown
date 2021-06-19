@@ -1,0 +1,172 @@
+.about {
+    padding: 100px 0;
+    &__intro {
+        width: 100%;
+        height: 100%;
+        padding: 100px;
+        position: relative;
+        &-content {
+            h3 {
+                padding-bottom: 30px;
+                text-align: center;
+                @include text(44px, 'el', null, $text-color-yellow, uppercase);
+            }
+            p {
+                padding-bottom: 45px;
+                text-align: center;
+                @include text(14px, 'a', null, $text-color-black, uppercase);
+            }
+        }
+        &-text {
+            padding-top: 65px;
+            width: 100%;
+            p {
+                width: 80%;
+                text-align: center;
+                margin: 0 auto;
+                @include text(14px, 'a', 25px, $text-color-black, null);
+            }
+        }
+        &::after {
+            content: "";
+            width: 2px;
+            height: 240px;
+            background-color: $bg-black;
+            position: absolute;
+            bottom: -25%;
+            left: 50%;
+        }
+    }
+    .row {
+        &:nth-child(2) {
+            padding-top: 200px;
+        }
+    }
+    &__desc-text {
+        padding: 0 100px;
+        p {
+            @include text(14px, 'a', 30px, $text-color-black, null);
+        }
+    }
+    &__desc-img {
+        padding-top: 120px;
+    }
+    &__manager {
+        padding-top: 150px;
+        width: 100%;
+        height: 100%;
+        &-text {
+            width: 100%;
+            p {
+                width: 80%;
+                text-align: center;
+                margin: 0 auto;
+                @include text(14px, 'a', 25px, $text-color-black, null);
+            }
+        }
+        &-info {
+            padding-top: 40px;
+            h4,
+            p {
+                text-align: center;
+                @include text(11px, 'ab', null, $text-color-black, uppercase);
+            }
+            p {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            .img {
+                position: relative;
+                .signature {
+                    position: absolute;
+                    bottom: -30px;
+                    right: 0;
+                }
+            }
+        }
+    }
+    &__contact {
+        width: 100%;
+        height: 100%;
+        padding-top: 100px;
+        &-text {
+            width: 100%;
+            height: 100%;
+            p {
+                width: 70%;
+                margin: 0 auto;
+                text-align: center;
+                @include text(14px, 'a', null, $text-color-black, null);
+            }
+        }
+    }
+    @include sm {
+        &__desc-text {
+            padding-left: 100px;
+            padding-right: 0;
+            p {
+                @include text(14px, 'a', 30px, $text-color-black, null);
+            }
+        }
+        &__desc-img {
+            padding-top: 100px;
+        }
+        &__manager {
+            padding: 100px;
+        }
+    }
+    @include xs {
+        .container {
+            padding: 20px !important;
+        }
+        &__intro {
+            &-content {
+                h3 {
+                    font-size: 36px;
+                }
+                p {
+                    font-size: 12px;
+                    line-height: 20px;
+                }
+            }
+            &-text {
+                padding-top: 65px;
+                width: 100%;
+                p {
+                    width: 100%;
+                    text-align: center;
+                    margin: 0 auto;
+                    @include text(14px, 'a', 25px, $text-color-black, null);
+                }
+            }
+            &::after {
+                content: "";
+                width: 2px;
+                height: 240px;
+                background-color: $bg-black;
+                position: absolute;
+                bottom: -25%;
+                left: 50%;
+            }
+        }
+        &__desc-text {
+            padding-left: 0;
+            padding-right: 0;
+            p {
+                @include text(14px, 'a', 30px, $text-color-black, null);
+            }
+        }
+        &__desc-img {
+            padding-top: 100px;
+        }
+        &__manager {
+            padding: 100px;
+            &-text {
+                width: 100%;
+                p {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

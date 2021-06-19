@@ -19,6 +19,16 @@
     }
 }
 
+.img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .banner-product {
     width: 100%;
     height: 100%;
@@ -83,6 +93,7 @@
     display: flex;
     justify-content: space-evenly;
     a {
+        margin: 0 -200px;
         @include transition($t);
         width: 200px;
         border: 1px solid $bg-black;
@@ -93,6 +104,19 @@
             @include transition($t);
             background-color: $bg-black;
             color: $text-color-white;
+        }
+    }
+    @include sm {
+        a {
+            margin: 0 -100px;
+        }
+    }
+    @include sm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        a {
+            margin: -100px 0;
         }
     }
 }
