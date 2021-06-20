@@ -93,7 +93,7 @@
     display: flex;
     justify-content: space-evenly;
     a {
-        margin: 0 -200px;
+        margin: 0 -250px;
         @include transition($t);
         width: 200px;
         border: 1px solid $bg-black;
