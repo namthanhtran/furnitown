@@ -1,0 +1,205 @@
+.header {
+    .revert {
+        padding-top: 53px;
+        padding-right: 200px;
+        a {
+            @include text(11px, 'evh', null, $text-color-black, uppercase);
+            img {
+                transform: rotate(180deg) translateX(0);
+                padding-right: 10px;
+                @include transition($t);
+            }
+        }
+        &:hover {
+            a {
+                color: $text-color-yellow;
+                img {
+                    @include transition($t);
+                    transform: translateX(-170px);
+                }
+            }
+        }
+    }
+}
+
+.news-more {
+    width: 100%;
+    height: 100%;
+    padding-top: 150px;
+    .title,
+    a {
+        padding: 20px 0;
+        @include text(12px, 'ab', null, $text-color-black, uppercase);
+    }
+    p {
+        padding-bottom: 25px;
+        @include text(12px, 'a', 15px, $text-color-black, null);
+    }
+    .img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .revert {
+        padding-bottom: 50px;
+        a {
+            @include text(11px, 'evh', null, $text-color-black, uppercase);
+            img {
+                transform: rotate(180deg) translateX(0);
+                padding-right: 10px;
+                @include transition($t);
+            }
+        }
+        &:hover {
+            a {
+                color: $text-color-yellow;
+                img {
+                    @include transition($t);
+                    transform: translateX(-170px);
+                }
+            }
+        }
+    }
+    &__text {
+        h3 {
+            padding-right: 20%;
+            padding-top: 65px;
+            @include text(20px, 'el', 30px, $text-color-black, uppercase);
+        }
+        h4 {
+            padding-right: 30%;
+            padding-top: 40px;
+            padding-bottom: 40px;
+            @include text(12px, 'ab', 20px, $text-color-black, uppercase);
+        }
+        span {
+            @include text(12px, 'ai', 20px, $text-color-black, null);
+        }
+        p {
+            padding-top: 40px;
+            @include text(12px, 'a', 20px, $text-color-black, null);
+        }
+    }
+    &__list {
+        padding: 100px 0;
+        h3 {
+            position: relative;
+            padding-bottom: 20px;
+            text-align: center;
+            @include text(11px, 'ab', null, $text-color-black, uppercase);
+            &::before {
+                content: "";
+                width: 40%;
+                height: 2px;
+                top: 5px;
+                left: 0;
+                background-color: $bg-black;
+                position: absolute;
+            }
+            &::after {
+                content: "";
+                width: 40%;
+                height: 2px;
+                top: 5px;
+                right: 0;
+                background-color: $bg-black;
+                position: absolute;
+            }
+        }
+        .row {
+            .col {
+                position: relative;
+                .item {
+                    margin-top: 50px;
+                    @include transition($t);
+                    &:first-child {
+                        margin: 0;
+                    }
+                    .text,
+                    .btn {
+                        padding: 0 10px;
+                    }
+                    .btn {
+                        a {
+                            display: block;
+                            &:last-child {
+                                display: none;
+                            }
+                        }
+                    }
+                    &:hover {
+                        @include transition($t);
+                        background-color: $hover-yellow;
+                        h4,
+                        a,
+                        p {
+                            color: $text-color-white;
+                        }
+                        .btn {
+                            a {
+                                &:first-child {
+                                    display: none;
+                                }
+                                &:last-child {
+                                    display: block;
+                                    img {
+                                        width: 20px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include lg {
+        .revert {
+            display: none;
+        }
+    }
+    @include md {
+        .revert {
+            display: none;
+        }
+    }
+    @include sm {
+        .revert {
+            display: block;
+        }
+        &__list {
+            h3 {
+                &::before,
+                &::after {
+                    top: 25px;
+                }
+            }
+        }
+    }
+    @include xs {
+        &__list {
+            h3 {
+                &::before,
+                &::after {
+                    width: 30%;
+                    top: 25px;
+                }
+            }
+        }
+    }
+    @include xxs {
+        &__list {
+            h3 {
+                &::before,
+                &::after {
+                    width: 25%;
+                    top: 25px;
+                }
+            }
+        }
+    }
+}

@@ -2,16 +2,18 @@
 // ---------------Scroll Top--------------------
 let header = document.querySelector('header .container-fluid');
 let hHeader = header.clientHeight;
+
+let menuFixed = $('.header__menu .header__menu-block .cover');
+let heightMenuFixed = menuFixed.offset().top + ((menuFixed).height());
+
+
 document.addEventListener('scroll', function() {
     let scrollY = window.pageYOffset;
-    if (scrollY > 10) {
-        $('.header .container-fluid').css("visibility", "hidden");
-        $('.header .header__menu').css("visibility", "hidden");
-        $('.header .scroll').css("display", "flex");
+    console.log(scrollY);
+    if (scrollY > heightMenuFixed) {
+        $('.header .scroll').addClass('active');
     } else {
-        $('.header .container-fluid').css("visibility", "visible");
-        $('.header .scroll').css("display", "none");
-        $('.header .header__menu').css("visibility", "visible");
+        $('.header .scroll').removeClass('active');
     }
 })
 
