@@ -15,6 +15,9 @@
         padding-bottom: 20px;
         @include text(12px, 'a', null, $text-color-white, null);
     }
+    span {
+        @include text(12px, 'ai', 20px, red, null);
+    }
     input {
         background-color: transparent;
         width: 80%;
