@@ -47,3 +47,43 @@ img {
     transform: scaleX(1);
     @include transform-origin(left center);
 }
+
+// btn-double
+.btn-double {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-evenly;
+    a {
+        margin: 0 -130px;
+        @include transition($t);
+        width: 200px;
+        border: 1px solid $bg-black;
+        padding: 15px 0;
+        text-align: center;
+        @include text(11px, 'ab', null, $text-color-black, uppercase);
+        &:hover {
+            @include transition($t);
+            background-color: $bg-black;
+            color: $text-color-white;
+        }
+    }
+    @include sm {
+        display: flex;
+        align-items: center;
+        a {
+            margin: -100px 0;
+        }
+    }
+    @include xs {
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include xxs {
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

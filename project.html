@@ -25,8 +25,78 @@
 </head>
 
 <body>
+    <div class="header__menu">
+        <div class="header__menu-block">
+            <div class="cover">
+                <div class="hidden-menu">
+                    <p>menu</p>
+                </div>
+                <div class="block-logo">
+                    <div class="logo">
+                        <img src="img/homepage/logo_icon.png" alt="">
+                        <img src="img/homepage/menu-bar.png" alt="">
+                    </div>
+                    <div class="logo-hidden">
+                        <img src="img/homepage/logo_icon-black.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__menu-hidden">
+            <div class="main">
+                <div class="hidden-top">
+                    <a href="index.html">furnitown</a>
+                    <div class="hidden-social">
+                        <p>FOLLOW US</p>
+                        <div class="icon">
+                            <i><img src="img/homepage/email.png" alt="" style="padding-top: 5px;"></i>
+                            <i><img src="img/homepage/facebook.png" alt=""></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-main">
+                    <div class="close-menu">
+                        <img src="img/homepage/logo_icon.png" alt="">
+                        <div class="toggle">
+                            <img src="img/homepage/close-menu.png" alt="">
+                        </div>
+                    </div>
+                    <div class="menu-column">
+                        <div class="title">
+                            <a href="about.html">FURNITOWN</a>
+                        </div>
+                        <ul class="list-item">
+                            <li><a href="product.html">sản phẩm</a></li>
+                            <li><a href="service.html">dịch vụ</a></li>
+                            <li><a href="project.html">dự án</a></li>
+                            <li><a href="contact.html">liên hệ</a></li>
+                        </ul>
+                        <div class="more">
+                            <ul>
+                                <li><a href="about.html">FAQS</a></li>
+                                <li><a href="news.html">Tin tức</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Header -->
     <header class="header header-fixed" id="header">
+        <ul class="scroll">
+            <li><a href="index.html">furnitown</a></li>
+            <li><a href="product.html">sản phẩm</a></li>
+            <li><a href="service.html">dịch vụ</a></li>
+            <li>
+                <a href="index.html">
+                    <img src="img/homepage/logo_icon-white.png" alt="">
+                </a>
+            </li>
+            <li><a href="project.html">dự án</a></li>
+            <li><a href="news.html">tin tức</a></li>
+            <li><a href="contact.html">liên hệ</a></li>
+        </ul>
         <div class="container-fluid">
             <ul class="header__links">
                 <li>
@@ -37,74 +107,6 @@
                     <img src="img/homepage/arrow-black.png" alt="">
                 </li>
             </ul>
-        </div>
-        <ul class="scroll">
-            <li><a href="index.html">furnitown</a></li>
-            <li><a href="product.html">sản phẩm</a></li>
-            <li><a href="service.html">dịch vụ</a></li>
-            <li>
-                <a href="index.html"><img src="img/homepage/logo_icon-white.png" alt=""></a>
-            </li>
-            <li><a href="project.html">dự án</a></li>
-            <li><a href="news.html">tin tức</a></li>
-            <li><a href="contact.html">liên hệ</a></li>
-        </ul>
-        <div class="header__menu">
-            <div class="header__menu-block">
-                <div class="cover">
-                    <div class="hidden-menu">
-                        <p>menu</p>
-                    </div>
-                    <div class="block-logo">
-                        <div class="logo">
-                            <img src="img/homepage/logo_icon.png" alt="">
-                            <img src="img/homepage/menu-bar.png" alt="">
-                        </div>
-                        <div class="logo-hidden">
-                            <img src="img/homepage/logo_icon-black.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="header__menu-hidden">
-                <div class="main">
-                    <div class="hidden-top">
-                        <a href="index.html">furnitown</a>
-                        <div class="hidden-social">
-                            <p>FOLLOW US</p>
-                            <div class="icon">
-                                <i><img src="img/homepage/email.png" alt="" style="padding-top: 5px;"></i>
-                                <i><img src="img/homepage/facebook.png" alt=""></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hidden-main">
-                        <div class="close-menu">
-                            <img src="img/homepage/logo_icon.png" alt="">
-                            <div class="toggle">
-                                <img src="img/homepage/close-menu.png" alt="">
-                            </div>
-                        </div>
-                        <div class="menu-column">
-                            <div class="title">
-                                <a href="about.html">FURNITOWN</a>
-                            </div>
-                            <ul class="list-item">
-                                <li><a href="product.html">sản phẩm</a></li>
-                                <li><a href="service.html">dịch vụ</a></li>
-                                <li><a href="project.html">dự án</a></li>
-                                <li><a href="contact.html">liên hệ</a></li>
-                            </ul>
-                            <div class="more">
-                                <ul>
-                                    <li><a href="about.html">FAQS</a></li>
-                                    <li><a href="news.html">Tin tức</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="mobile">
             <ul class="grToggle">
@@ -151,12 +153,19 @@
                             </div>
                             <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
                                 <div class="project__intro-selected">
-                                    <select name="project-selected" id="project-selected">
-                                    <option value="all-project">tất cả dự án</option>
-                                    <option value="home-project">dự án nhà ở</option>
-                                    <option value="apartment-project">dự án chung cư</option>
-                                    <option value="office-project">dự án văn phòng</option>
-                                </select>
+                                    <div class="cover">
+                                        <div class="select-current">
+                                            <a href="#">tất cả dự án</a>
+                                            <i>
+                                                <img src="img/select-down.png" alt="">
+                                            </i>
+                                        </div>
+                                        <div class="select-options">
+                                            <a href="#">dự án nhà ở</a>
+                                            <a href="#">dự án văn phòng</a>
+                                            <a href="#">dự án chung cư</a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

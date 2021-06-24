@@ -1,24 +1,13 @@
 .header {
-    .revert {
-        padding-top: 53px;
-        padding-right: 200px;
-        a {
-            @include text(11px, 'evh', null, $text-color-black, uppercase);
-            img {
-                transform: rotate(180deg) translateX(0);
-                padding-right: 10px;
-                @include transition($t);
-            }
-        }
-        &:hover {
-            a {
-                color: $text-color-yellow;
-                img {
-                    @include transition($t);
-                    transform: translateX(-170px);
-                }
-            }
-        }
+    width: 50%;
+    @include sm {
+        width: 100%;
+    }
+    @include xs {
+        width: 100%;
+    }
+    @include xxs {
+        width: 100%;
     }
 }
 
@@ -45,17 +34,22 @@
         }
     }
     .revert {
+        display: block;
+        margin-top: -100px;
         padding-bottom: 50px;
+        width: 100%;
         a {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -15px;
+            margin-left: 80%;
             @include text(11px, 'evh', null, $text-color-black, uppercase);
             img {
                 transform: rotate(180deg) translateX(0);
                 padding-right: 10px;
                 @include transition($t);
             }
-        }
-        &:hover {
-            a {
+            &:hover {
                 color: $text-color-yellow;
                 img {
                     @include transition($t);
@@ -88,14 +82,13 @@
         padding: 100px 0;
         h3 {
             position: relative;
-            padding-bottom: 20px;
             text-align: center;
             @include text(11px, 'ab', null, $text-color-black, uppercase);
             &::before {
                 content: "";
                 width: 40%;
-                height: 2px;
-                top: 5px;
+                height: 1px;
+                top: 25px;
                 left: 0;
                 background-color: $bg-black;
                 position: absolute;
@@ -103,8 +96,8 @@
             &::after {
                 content: "";
                 width: 40%;
-                height: 2px;
-                top: 5px;
+                height: 1px;
+                top: 25px;
                 right: 0;
                 background-color: $bg-black;
                 position: absolute;
@@ -118,10 +111,6 @@
                     @include transition($t);
                     &:first-child {
                         margin: 0;
-                    }
-                    .text,
-                    .btn {
-                        padding: 0 10px;
                     }
                     .btn {
                         a {
@@ -157,19 +146,16 @@
             }
         }
     }
-    @include lg {
-        .revert {
-            display: none;
-        }
-    }
-    @include md {
-        .revert {
-            display: none;
-        }
-    }
     @include sm {
         .revert {
-            display: block;
+            a {
+                margin-left: 0 !important;
+            }
+        }
+        &__text {
+            h4 {
+                padding-right: 0;
+            }
         }
         &__list {
             h3 {
@@ -181,6 +167,16 @@
         }
     }
     @include xs {
+        .revert {
+            a {
+                margin-left: 0 !important;
+            }
+        }
+        &__text {
+            h4 {
+                padding-right: 0;
+            }
+        }
         &__list {
             h3 {
                 &::before,
@@ -192,6 +188,16 @@
         }
     }
     @include xxs {
+        .revert {
+            a {
+                margin-left: 0 !important;
+            }
+        }
+        &__text {
+            h4 {
+                padding-right: 0;
+            }
+        }
         &__list {
             h3 {
                 &::before,

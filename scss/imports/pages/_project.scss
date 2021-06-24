@@ -1,5 +1,9 @@
 .project {
     padding: 100px 0;
+    .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
     h3 {
         @include text(12px, 'el', null, $text-color-black, uppercase);
     }
@@ -19,37 +23,64 @@
             }
         }
         &-selected {
-            width: 100%;
             height: 100%;
             @include flex(flex, flex-end, flex-end);
-            select {
-                padding: 10px 20px;
-                background-color: $bg-black;
+            flex-direction: column;
+            a {
                 @include text(11px, 'ab', null, $text-color-white, uppercase);
-                option {
-                    padding: 20px 0;
-                    background-color: $hover-yellow;
-                    @include text(11px, 'ab', null, $text-color-white, uppercase);
+            }
+            .cover {
+                .select-current {
+                    cursor: pointer;
+                    width: 200px;
+                    height: 40px;
+                    background-color: $bg-black;
+                    @include flex(flex, center, flex-start);
+                    padding-left: 20px;
+                    img {
+                        padding-left: 50px;
+                    }
+                }
+                .select-options {
+                    display: none;
+                    @include transition(2s);
+                }
+                &:hover {
+                    .select-options {
+                        @include transition(2s);
+                        z-index: 99999;
+                        @include flex(flex, flex-start, center);
+                        flex-direction: column;
+                        position: absolute;
+                        width: 200px;
+                        top: 95px;
+                        background-color: $hover-yellow;
+                        a {
+                            width: 100%;
+                            padding: 15px 0 15px 20px;
+                            border: 1px solid $bg-gray;
+                            @include transition($t);
+                            &:hover {
+                                @include transition($t);
+                                background-color: $bg-black;
+                            }
+                        }
+                    }
                 }
             }
-        }
-        &::after {
-            content: "";
-            width: 100%;
-            height: 2px;
-            background-color: $bg-black;
-            position: absolute;
-            bottom: -50px;
         }
     }
     &__prod {
         padding-top: 100px;
         .row {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
+            width: 100%;
+            height: 100%;
+            position: relative;
             .col {
+                width: 100%;
                 position: relative;
                 .categories {
+                    width: 100%;
                     &:first-child {
                         padding-top: 0;
                     }
@@ -96,6 +127,20 @@
             }
         }
     }
+    @include sm {
+        &__intro {
+            &-selected {
+                .cover {
+                    &:hover {
+                        .select-options {
+                            position: absolute;
+                            top: 115px;
+                        }
+                    }
+                }
+            }
+        }
+    }
     @include xs {
         .title {
             text-align: center;
@@ -105,8 +150,15 @@
         }
         &__intro {
             &-selected {
-                padding-top: 20px;
-                @include flex(flex, center, center);
+                .cover {
+                    margin: 0 auto;
+                    &:hover {
+                        .select-options {
+                            position: absolute;
+                            top: 60px;
+                        }
+                    }
+                }
             }
         }
         &__prod {
@@ -122,7 +174,7 @@
             }
         }
     }
-    @include xxs {
+    @include xs {
         .title {
             text-align: center;
         }
@@ -132,7 +184,14 @@
         &__intro {
             &-selected {
                 padding-top: 20px;
-                @include flex(flex, center, center);
+                .cover {
+                    &:hover {
+                        .select-options {
+                            position: absolute;
+                            top: 60px;
+                        }
+                    }
+                }
             }
         }
         &__prod {

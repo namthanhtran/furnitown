@@ -1,10 +1,16 @@
 // css footer
 .footer {
+    &.footer-home {
+        height: 945px !important;
+        .container {
+            padding-top: 520px;
+        }
+    }
     width: 100%;
-    height: 945px;
+    height: 100vh;
     background-image: url(/img/bg_footer.jpg);
     .container {
-        padding-top: 520px;
+        padding-top: 250px;
         width: 100%;
         height: 100%;
         display: block;
@@ -66,6 +72,9 @@
                 width: 180px !important;
             }
         }
+        .container {
+            padding-top: 200px;
+        }
     }
     @include xs {
         .footer__logo {
@@ -74,6 +83,9 @@
                 width: 90px !important;
             }
         }
+        .container {
+            padding-top: 200px;
+        }
     }
     @include xxs {
         .footer__logo {
@@ -81,6 +93,9 @@
             &::after {
                 width: 50px !important;
             }
+        }
+        .container {
+            padding-top: 200px;
         }
     }
 }

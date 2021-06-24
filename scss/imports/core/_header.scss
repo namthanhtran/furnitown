@@ -261,6 +261,15 @@ body {
             }
         }
     }
+    @include sm {
+        display: none;
+    }
+    @include xs {
+        display: none;
+    }
+    @include xxs {
+        display: none;
+    }
 }
 
 .header {
@@ -307,24 +316,23 @@ body {
         }
     }
     .scroll {
-        display: none;
-        margin-top: -70px;
-        margin-right: 20px;
+        @include flex(none, center, center);
+        background-color: $bg-menu;
+        width: 100%;
+        height: 70px;
         position: fixed;
-        &.active {
-            background-color: $bg-menu;
-            width: 100%;
-            height: 70px;
-            @include flex(flex, center, center);
-            li {
-                padding: 0 20px;
-                a {
-                    @include text(11px, 'e', null, $text-color-white, uppercase);
-                    &:hover {
-                        color: $hover-yellow;
-                    }
+        transition: 0.5s;
+        li {
+            padding: 0 20px;
+            a {
+                @include text(11px, 'e', null, $text-color-white, uppercase);
+                &:hover {
+                    color: $hover-yellow;
                 }
             }
+        }
+        &.active {
+            @include flex(flex, center, center);
         }
     }
     .mobile {
@@ -389,6 +397,32 @@ body {
                 }
             }
         }
+        .nav {
+            display: none;
+            background-color: $bg-menu;
+            width: 100vw;
+            height: 100vh;
+            ul {
+                padding-top: 10px;
+                display: flex;
+                flex-direction: column;
+                li {
+                    margin: 0 auto;
+                    padding: 20px;
+                    width: 100vw;
+                    text-align: center;
+                    a {
+                        @include text(18px, 'eb', null, $text-color-white, uppercase);
+                    }
+                    &:hover {
+                        @include transition($t);
+                        width: 100vw;
+                        background-color: $hover-yellow;
+                        text-align: center;
+                    }
+                }
+            }
+        }
     }
     @include lg {
         .mobile {
@@ -411,38 +445,9 @@ body {
         }
         .mobile {
             display: block;
-            .nav {
-                display: none;
-                background-color: $bg-menu;
-                width: 100vw;
-                height: 100vh;
-                @include transition($t);
-                ul {
-                    padding-top: 10px;
-                    display: flex;
-                    flex-direction: column;
-                    li {
-                        @include transition($t);
-                        margin: 0 auto;
-                        padding: 20px;
-                        width: 100vw;
-                        text-align: center;
-                        a {
-                            @include text(11px, 'eb', null, $text-color-white, uppercase);
-                        }
-                        &:hover {
-                            @include transition($t);
-                            width: 100vw;
-                            background-color: $hover-yellow;
-                            text-align: center;
-                        }
-                    }
-                    &:nth-child(5) {
-                        li {
-                            &:first-child {}
-                        }
-                    }
-                }
+            .grToggle {
+                padding-left: 15px !important;
+                padding-right: 15px !important;
             }
         }
     }
@@ -457,37 +462,11 @@ body {
             display: block;
             .grToggle {
                 align-items: center;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
                 .logo {
-                    width: 50px;
-                    height: 40px;
-                }
-            }
-            .nav {
-                display: none;
-                background-color: $bg-menu;
-                width: 100vw;
-                height: 100vh;
-                @include transition($t);
-                ul {
-                    padding-top: 10px;
-                    display: flex;
-                    flex-direction: column;
-                    li {
-                        @include transition($t);
-                        margin: 0 auto;
-                        padding: 20px;
-                        width: 100vw;
-                        text-align: center;
-                        a {
-                            @include text(11px, 'eb', null, $text-color-white, uppercase);
-                        }
-                        &:hover {
-                            @include transition($t);
-                            width: 100vw;
-                            background-color: $hover-yellow;
-                            text-align: center;
-                        }
-                    }
+                    width: 60px;
+                    height: 50px;
                 }
             }
         }
@@ -503,37 +482,13 @@ body {
         }
         .mobile {
             display: block;
-            .nav {
-                display: none;
-                background-color: $bg-menu;
-                width: 100vw;
-                height: 100vh;
-                @include transition($t);
-                ul {
-                    padding-top: 10px;
-                    display: flex;
-                    flex-direction: column;
-                    li {
-                        @include transition($t);
-                        margin: 0 auto;
-                        padding: 20px;
-                        width: 100vw;
-                        text-align: center;
-                        a {
-                            @include text(11px, 'eb', null, $text-color-white, uppercase);
-                        }
-                        &:hover {
-                            @include transition($t);
-                            width: 100vw;
-                            background-color: $hover-yellow;
-                            text-align: center;
-                        }
-                    }
-                    &:nth-child(5) {
-                        li {
-                            &:first-child {}
-                        }
-                    }
+            .grToggle {
+                align-items: center;
+                padding-left: 15px !important;
+                padding-right: 15px !important;
+                .logo {
+                    width: 60px;
+                    height: 50px;
                 }
             }
         }

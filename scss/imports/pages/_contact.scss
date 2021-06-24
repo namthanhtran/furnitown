@@ -1,9 +1,8 @@
 .contact {
-    padding-top: 100px;
+    padding: 100px 0 100px 100px;
     width: 100%;
     height: 100%;
     background-image: url(/img/bg-contact.png);
-    padding-left: 100px;
     .title {
         padding-bottom: 10px;
         @include text(12px, 'ab', null, $text-color-yellow, uppercase);
@@ -81,6 +80,22 @@
                     background-color: $bg-black;
                 }
             }
+        }
+    }
+    @include sm {
+        padding-left: 15px;
+        padding-right: 15px;
+        input,
+        textarea {
+            width: 100%;
+        }
+        &__info {
+            &-left {
+                padding-bottom: 50px;
+            }
+        }
+        &__item {
+            padding-bottom: 50px;
         }
     }
 }

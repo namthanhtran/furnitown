@@ -29,26 +29,6 @@
                 padding-bottom: 50px;
             }
         }
-        .btn-double {
-            a {
-                margin: 0 10px;
-            }
-            @include sm {
-                a {
-                    margin: 10px 0;
-                }
-            }
-            @include xs {
-                a {
-                    margin: 10px 0;
-                }
-            }
-            @include xxs {
-                a {
-                    margin: 10px 0;
-                }
-            }
-        }
         &::after {
             content: "";
             width: 100%;
@@ -56,6 +36,27 @@
             position: absolute;
             background-color: $bg-black;
             bottom: -50px;
+        }
+        .btn-service {
+            width: 100%;
+            a {
+                margin: 0 -10px;
+            }
+            @include md {
+                a {
+                    margin: 5px 0;
+                }
+            }
+            @include xs {
+                a {
+                    margin: 5px 0;
+                }
+            }
+            @include xxs {
+                a {
+                    margin: 5px 0;
+                }
+            }
         }
     }
     &__process {

@@ -9,11 +9,16 @@ let heightMenuFixed = menuFixed.offset().top + ((menuFixed).height());
 
 document.addEventListener('scroll', function() {
     let scrollY = window.pageYOffset;
-    console.log(scrollY);
     if (scrollY > heightMenuFixed) {
-        $('.header .scroll').addClass('active');
+        if ($(window).width() <= 960) {
+            $('.header .scroll').css('display', 'none');
+        } else {
+            $('.header .scroll').addClass('active');
+            $('.header .scroll').css('display', 'flex');
+        }
     } else {
         $('.header .scroll').removeClass('active');
+        $('.header .scroll').css('display', 'none');
     }
 })
 
@@ -36,6 +41,23 @@ $('.mobile .menu').on('click', function(e) {
     e.preventDefault();
     console.log(1);
 })
+
+// Nav mobile
+let btnMobile = $('header .mobile .grToggle .toggle');
+let navMobile = $('.mobile .nav a');
+
+
+$(btnMobile).on('click', function(e) {
+    e.preventDefault();
+    $('body').toggleClass('clicked');
+})
+
+$(navMobile).each(function(index, element) {
+    $(element).on('click', function(e) {
+        $('body').removeClass('clicked');
+    })
+})
+
 
 //--------------------Back to top-------------------------
 $('.back-to-top').on('click', function(e) {
@@ -64,22 +86,6 @@ $('.slider-prev').on('click', function(e) {
 $('.slider-next').on('click', function(e) {
     e.preventDefault();
     $carousel.flickity('next');
-})
-
-// Nav mobile
-let btnMobile = $('header .mobile .grToggle .toggle');
-let navMobile = $('.mobile .nav a');
-
-
-$(btnMobile).on('click', function(e) {
-    e.preventDefault();
-    $('body').toggleClass('clicked');
-})
-
-$(navMobile).each(function(index, element) {
-    $(element).on('click', function(e) {
-        $('body').removeClass('clicked');
-    })
 })
 
 // Product details

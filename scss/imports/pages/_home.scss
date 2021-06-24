@@ -1,8 +1,4 @@
 // CSS HOMEPAGE
-.virtual {
-    display: none;
-}
-
 .homepage {
     // Slider
     .slider {
@@ -251,56 +247,62 @@
             @include text(12px, 'evh', null, $text-color-black, uppercase);
         }
         .img {
+            @include transition($t);
             position: relative;
             min-width: 100%;
             min-height: 100%;
-            width: 100%;
-            height: 100%;
             object-fit: cover;
             img {
                 width: 100%;
                 height: 100%;
             }
-            &:hover {
-                cursor: pointer;
-                .virtual {
-                    background-color: $hover-blue;
-                    opacity: 0.9;
-                    width: 100%;
-                    height: 100%;
-                    top: 0;
-                    display: block;
-                    position: absolute;
-                    .content {
-                        @include centerAbsolute;
-                        @include flex(flex, center, center);
-                        flex-direction: column;
+            .virtual {
+                display: block;
+                background-color: $hover-blue;
+                opacity: 0.9;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                position: absolute;
+                @include transition(all $t);
+                @include transform(scale(0));
+                .content {
+                    @include centerAbsolute;
+                    @include flex(flex, center, center);
+                    flex-direction: column;
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        margin-bottom: 10px;
+                    }
+                    span {
+                        padding-bottom: 30px;
+                        @include text(12px, 'a', null, $text-color-white, null);
+                    }
+                    a {
+                        @include text(11px, 'ab', null, $text-color-white, uppercase);
                         img {
+                            transform: translate(0);
+                            @include transition($t);
                             width: 20px;
-                            height: 20px;
-                            margin-bottom: 10px;
+                            height: 10px;
+                            margin-bottom: 0 !important;
                         }
-                        span {
-                            padding-bottom: 30px;
-                            @include text(12px, 'a', null, $text-color-white, null);
-                        }
-                        a {
-                            @include text(11px, 'ab', null, $text-color-white, uppercase);
+                        &:hover {
                             img {
-                                transform: translate(0);
+                                transform: translate(20px);
                                 @include transition($t);
-                                width: 20px;
-                                height: 10px;
-                                margin-bottom: 0 !important;
-                            }
-                            &:hover {
-                                img {
-                                    transform: translate(20px);
-                                    @include transition($t);
-                                }
                             }
                         }
                     }
+                }
+            }
+            &:hover {
+                cursor: pointer;
+                .virtual {
+                    display: block;
+                    @include transition(all $t);
+                    @include transform(scale(1));
                 }
             }
         }
@@ -309,6 +311,11 @@
             .row {
                 padding-top: 55px;
                 .workroom {
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: flex-end;
+                    position: relative;
                     .text {
                         position: absolute;
                         top: 0;
@@ -319,76 +326,6 @@
                         strong {
                             font-family: 'ab';
                             color: $text-color-black;
-                        }
-                    }
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: flex-end;
-                    position: relative;
-                    .text {
-                        position: absolute;
-                        top: 0;
-                        width: 80%;
-                        margin-bottom: 100px;
-                        @include text(12px, 'a', null, $text-color-black, null);
-                        strong {
-                            font-family: 'ab';
-                            color: $text-color-black;
-                        }
-                    }
-                    .img {
-                        position: relative;
-                        min-width: 100%;
-                        min-height: 100%;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        img {
-                            width: 100%;
-                            height: 100%;
-                        }
-                        &:hover {
-                            cursor: pointer;
-                            .virtual {
-                                background-color: $hover-blue;
-                                opacity: 0.9;
-                                width: 100%;
-                                height: 100%;
-                                top: 0;
-                                display: block;
-                                position: absolute;
-                                .content {
-                                    @include centerAbsolute;
-                                    @include flex(flex, center, center);
-                                    flex-direction: column;
-                                    img {
-                                        width: 20px;
-                                        height: 20px;
-                                        margin-bottom: 10px;
-                                    }
-                                    span {
-                                        padding-bottom: 30px;
-                                        @include text(12px, 'a', null, $text-color-white, null);
-                                    }
-                                    a {
-                                        @include text(11px, 'ab', null, $text-color-white, uppercase);
-                                        img {
-                                            transform: translate(0);
-                                            @include transition($t);
-                                            width: 20px;
-                                            height: 10px;
-                                            margin-bottom: 0 !important;
-                                        }
-                                        &:hover {
-                                            img {
-                                                transform: translate(20px);
-                                                @include transition($t);
-                                            }
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -443,7 +380,7 @@
                 }
             }
         }
-        @include md {
+        @include sm {
             margin-bottom: -250px;
             .row {
                 padding-top: 55px;
@@ -455,6 +392,15 @@
                         img {
                             width: 100%;
                             height: 100%;
+                        }
+                        .virtual {
+                            .content {
+                                i {
+                                    img {
+                                        width: 50px;
+                                    }
+                                }
+                            }
                         }
                     }
                     &:nth-child(2) {
@@ -480,6 +426,8 @@
         @include xs {
             margin-bottom: -350px;
             padding-top: 0px !important;
+            text-align: center;
+            line-height: 20px;
             .row {
                 padding-top: 55px;
                 .col {
@@ -491,6 +439,15 @@
                         img {
                             width: 100%;
                             height: 100%;
+                        }
+                        .virtual {
+                            .content {
+                                i {
+                                    img {
+                                        width: 40px;
+                                    }
+                                }
+                            }
                         }
                     }
                     &:nth-child(2) {
@@ -516,6 +473,8 @@
         @include xxs {
             margin-bottom: -350px;
             padding-top: 0px !important;
+            text-align: center;
+            line-height: 20px;
             .row {
                 padding-top: 55px;
                 .col {
@@ -527,6 +486,15 @@
                         img {
                             width: 100%;
                             height: 100%;
+                        }
+                        .virtual {
+                            .content {
+                                i {
+                                    img {
+                                        width: 40px;
+                                    }
+                                }
+                            }
                         }
                     }
                     &:nth-child(2) {

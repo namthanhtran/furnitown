@@ -72,7 +72,9 @@
     display: flex;
     .number {
         padding-right: 20px;
+        margin-bottom: -8px;
         span {
+            @include flex(flex, flex-end, flex-end);
             @include text(90px, 'el', null, $text-color-yellow, null);
         }
     }
@@ -84,39 +86,6 @@
         p {
             padding-top: 20px;
             @include text(12px, 'a', 15px, $text-color-black, null);
-        }
-    }
-}
-
-.btn-double {
-    padding-top: 60px;
-    display: flex;
-    justify-content: space-evenly;
-    a {
-        margin: 0 -250px;
-        @include transition($t);
-        width: 200px;
-        border: 1px solid $bg-black;
-        padding: 15px 0;
-        text-align: center;
-        @include text(11px, 'ab', null, $text-color-black, uppercase);
-        &:hover {
-            @include transition($t);
-            background-color: $bg-black;
-            color: $text-color-white;
-        }
-    }
-    @include sm {
-        a {
-            margin: 0 -100px;
-        }
-    }
-    @include sm {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        a {
-            margin: -100px 0;
         }
     }
 }
@@ -137,6 +106,142 @@
             }
             &:hover {
                 background-color: #f0f0f0;
+            }
+        }
+    }
+}
+
+// all item
+.all-item {
+    width: 100%;
+    height: 100%;
+    .all-item-text {
+        width: 100%;
+        .row {
+            width: 100%;
+            .text-left {
+                @include flex(flex, flex-end, flex-end);
+                height: 100%;
+                width: 100%;
+            }
+            .text-right {
+                height: 100%;
+                padding-left: 80%;
+                .btn-pro {
+                    width: 100%;
+                    height: 100%;
+                    @include text(12px, 'ab', null, $text-color-black, uppercase);
+                    @include flex(flex, flex-end, flex-end);
+                    img {
+                        padding-right: 10px;
+                    }
+                    &:hover {
+                        color: $text-color-yellow;
+                    }
+                }
+            }
+        }
+    }
+    .all-item-img {
+        position: relative;
+        .row {
+            &:first-child {
+                padding: 0 0 80px 0;
+            }
+            position: relative;
+            &::after {
+                display: none;
+            }
+            .col {
+                &:nth-child(1) {
+                    &::after {
+                        display: none;
+                    }
+                }
+                &::after {
+                    content: "";
+                    width: 1px;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    background-color: $bg-gray;
+                }
+                .text {
+                    width: 100%;
+                    height: 20%;
+                    margin-top: -25px;
+                    h4 {
+                        @include text(18px, 'a', null, $text-color-black, null);
+                    }
+                    p {
+                        padding-top: 30px;
+                        @include text(12px, 'a', null, $text-color-black, null);
+                    }
+                }
+                .detail-products {
+                    a {
+                        @include text(12px, 'ab', null, $text-color-black, uppercase);
+                        img {
+                            padding-right: 10px;
+                        }
+                        &:hover {
+                            color: $text-color-yellow;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include lg {
+        .all-item-text {
+            display: flex;
+        }
+    }
+    @include md {
+        .all-item-text {
+            display: flex;
+        }
+    }
+    @include sm {
+        .all-item-text {
+            display: flex;
+            .text-right {
+                padding-left: 0 !important;
+            }
+        }
+    }
+    @include xs {
+        .all-item-text {
+            display: block;
+            .text-right {
+                padding-top: 20px;
+                padding-left: 0 !important;
+            }
+        }
+        .all-item-img {
+            .row {
+                .col {
+                    padding-bottom: 50px;
+                    &::after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    @include xxs {
+        .all-item-text {
+            display: block;
+        }
+        .all-item-img {
+            .row {
+                .col {
+                    padding-bottom: 50px;
+                    &::after {
+                        display: none;
+                    }
+                }
             }
         }
     }
