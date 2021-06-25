@@ -114,6 +114,8 @@ body {
         }
     }
     &-hidden {
+        z-index: 1;
+        position: fixed;
         display: none;
         @include transition($t);
         &.isPopup {

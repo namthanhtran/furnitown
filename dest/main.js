@@ -58,6 +58,22 @@ $(navMobile).each(function(index, element) {
     })
 })
 
+// Change project
+$('.cover').on('click', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.cover').toggleClass('active');
+})
+
+$('.cover .select-options a').each(function (index,element) {
+    $(element).on('click', function (e) {
+        e.preventDefault();
+        let temp = $('.cover .select-current a').html();
+        $('.cover .select-current a').html($(this).html());
+        $(this).html(temp);
+      })
+})
+
 
 //--------------------Back to top-------------------------
 $('.back-to-top').on('click', function(e) {
