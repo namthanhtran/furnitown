@@ -23,10 +23,13 @@ document.addEventListener('scroll', function() {
 })
 
 // --------------Popup menu-----------------------
-$('.hidden-menu').on('click', function(e) {
+$('.header__menu .cover').on('click', function(e) {
     e.preventDefault();
     $('.header .container-fluid').css("visibility", "hidden");
-    $('.header__menu-hidden').css("display", "block");
+    $('.header__menu-hidden').css({
+        "display":"block",
+        "width": "100vw"
+    });
     $('.header__menu-hidden').addClass('isPopup');
     $('.header__menu-block').css("display", "none");
 })
@@ -37,12 +40,8 @@ document.querySelector('.header__menu-hidden').addEventListener('click', functio
     $('.header__menu-block').css("display", "block");
 })
 
-$('.mobile .menu').on('click', function(e) {
-    e.preventDefault();
-    console.log(1);
-})
 
-// Nav mobile
+// Nav header fixed
 let btnMobile = $('header .mobile .grToggle .toggle');
 let navMobile = $('.mobile .nav a');
 
@@ -56,6 +55,11 @@ $(navMobile).each(function(index, element) {
     $(element).on('click', function(e) {
         $('body').removeClass('clicked');
     })
+})
+
+
+$('.mobile .menu').on('click', function(e) {
+    e.preventDefault();
 })
 
 // Change project
